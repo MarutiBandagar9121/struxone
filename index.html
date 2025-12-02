@@ -8,6 +8,8 @@
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" type="image/png" href="assets/images/favicon.png">
 
+    <link rel="stylesheet" href="styles/common.css">
+
     <link rel="stylesheet" href="styles/index.css">
     
     <!-- Bootstrap CSS -->
@@ -25,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNav>
         <div class="container">
-            <a class="navbar-brand" href="#home">
+            <a class="navbar-brand" href="index.html">
                 <img src="assets/images/gccprosLogo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,8 +38,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="aboutus/our-leaders.html">Our Leaders</a></li>
+                            <li><a class="dropdown-item" href="#">Opt 2</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
@@ -204,7 +212,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about-section" class="about-section">
         <div class="container">
             <h2 class="section-title d-block text-center mb-5">ABOUT GCCPROS</h2>
             <div class="row">
@@ -309,109 +317,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Active nav link
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // what we do section
-        // Simpler version with formatted display
-document.addEventListener('DOMContentLoaded', function() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    const formatNumber = (num, suffix) => {
-        if (suffix === 'K+' && num >= 1000) {
-            return (num / 1000).toFixed(0) + suffix;
-        } else if (suffix === 'M+' && num >= 1000000) {
-            return (num / 1000000).toFixed(0) + suffix;
-        } else {
-            return num + suffix;
-        }
-    };
-    
-    const animateValue = (element, start, end, duration, suffix) => {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const currentValue = Math.floor(progress * (end - start) + start);
-            
-            // Format for display
-            element.textContent = formatNumber(currentValue, suffix);
-            
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            } else {
-                // Ensure final value is properly formatted
-                element.textContent = formatNumber(end, suffix);
-            }
-        };
-        window.requestAnimationFrame(step);
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const statNumber = entry.target;
-                const target = parseInt(statNumber.getAttribute('data-count'));
-                const suffix = statNumber.getAttribute('data-suffix') || '';
-                
-                animateValue(statNumber, 0, target, 2000, suffix);
-                observer.unobserve(statNumber);
-            }
-        });
-    }, {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    });
-    
-    statNumbers.forEach(statNumber => {
-        observer.observe(statNumber);
-    });
-});
-    </script>
+    <script src="assets/scripts/script.js"></script>
 </body>
 </html>
