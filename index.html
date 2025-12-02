@@ -79,13 +79,75 @@
                     <p class="welcome-text">
                         We help the world's leading businesses unlock growth by establishing and scaling Global Capability Centers (GCCs). Our model ensures efficient setup, smooth digital transformation, and drives significant operational efficiency through your own in-house, expert teams.
                     </p>
-                    <button class="btn btn-primary-custom">
-                        Learn More <i class="fas fa-arrow-right ms-2"></i>
-                    </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- What We Do Section -->
+<section class="what-we-do-section py-5 position-relative overflow-hidden">
+    <!-- Background Globe and Gradient -->
+    <div class="background-globe">
+        <div class="globe-gradient"></div>
+        <img src="assets/images/globe.png" alt="Global Presence" class="globe-img">
+    </div>
+    
+    <div class="container position-relative">
+        <div class="row">
+            <!-- Left Content -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 class="section-title mb-4">WHAT WE DO</h2>
+                <p class="what-we-do-text">
+                    Accelerate your global strategy with gccpros. We partner with forward-thinking businesses to build and scale Global Capability Centers that drive real innovation and efficiency.
+                </p>
+                <p class="what-we-do-text">
+                    Our end-to-end approach covers everything from initial strategy and setup to ongoing management and scaling, ensuring your GCC becomes a center of excellence that contributes directly to your competitive advantage.
+                </p>
+            </div>
+            
+            <!-- Right Stats Boxes -->
+            <div class="col-lg-6">
+    <div class="row g-4">
+        <!-- Stat Box 1 -->
+        <div class="col-md-6">
+            <div class="stat-box">
+                <div class="stat-number" data-count="19000" data-suffix="K+">0</div>
+                <h4 class="stat-title">Professionals Hired</h4>
+                <p class="stat-desc">Skilled experts placed in GCCs worldwide</p>
+            </div>
+        </div>
+        
+        <!-- Stat Box 2 -->
+        <div class="col-md-6">
+            <div class="stat-box">
+                <div class="stat-number" data-count="35" data-suffix="+">0</div>
+                <h4 class="stat-title">Global Centers</h4>
+                <p class="stat-desc">GCCs established across 20+ countries</p>
+            </div>
+        </div>
+        
+        <!-- Stat Box 3 -->
+        <div class="col-md-6">
+            <div class="stat-box">
+                <div class="stat-number" data-count="150" data-suffix="+">0</div>
+                <div class="stat-title">Executive Experience</div>
+                <p class="stat-desc">Unrivaled combined industry leadership experience.</p>
+            </div>
+        </div>
+        
+        <!-- Stat Box 4 -->
+        <div class="col-md-6">
+            <div class="stat-box">
+                <div class="stat-number" data-count="2000000" data-suffix="M+">0</div>
+                <div class="stat-title">Real Estate Solutions</div>
+                <p class="stat-desc">Tailored real estate solutions for your GCC.</p>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
 
     <!-- Podcast Section -->
     <section class="podcast-section">
@@ -294,6 +356,62 @@
                 }
             });
         });
+
+        // what we do section
+        // Simpler version with formatted display
+document.addEventListener('DOMContentLoaded', function() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const formatNumber = (num, suffix) => {
+        if (suffix === 'K+' && num >= 1000) {
+            return (num / 1000).toFixed(0) + suffix;
+        } else if (suffix === 'M+' && num >= 1000000) {
+            return (num / 1000000).toFixed(0) + suffix;
+        } else {
+            return num + suffix;
+        }
+    };
+    
+    const animateValue = (element, start, end, duration, suffix) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const currentValue = Math.floor(progress * (end - start) + start);
+            
+            // Format for display
+            element.textContent = formatNumber(currentValue, suffix);
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                // Ensure final value is properly formatted
+                element.textContent = formatNumber(end, suffix);
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target;
+                const target = parseInt(statNumber.getAttribute('data-count'));
+                const suffix = statNumber.getAttribute('data-suffix') || '';
+                
+                animateValue(statNumber, 0, target, 2000, suffix);
+                observer.unobserve(statNumber);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    statNumbers.forEach(statNumber => {
+        observer.observe(statNumber);
+    });
+});
     </script>
 </body>
 </html>
