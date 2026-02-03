@@ -263,14 +263,33 @@ section {
   background-color: var(--light-gray);
 }
 
-.clients-grid {
+/* .clients-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.client-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+} */
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* This will center items in incomplete rows */
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .client-card {
+  flex: 0 0 300px; /* Fixed width, no grow/shrink */
   background-color: white;
   border-radius: var(--border-radius);
   padding: 2rem;
