@@ -1,7 +1,6 @@
 /* Our Clients Section Styles */
 .our-clients-section {
     padding: 60px 0;
-    background-color: #f8f9fa;
     overflow: hidden;
 }
 
@@ -14,14 +13,14 @@
     margin: 0 20px;
 }
 
-.clients-header {
+/* .clients-header {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     display: flex;
     z-index: 10;
-    background: var(--color-primary); /* Darker shade of the main color */
+    background: var(--color-primary);
 }
 
 .header-content {
@@ -53,10 +52,10 @@
     background: var(--color-primary);
     position: relative;
     clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
-}
+} */
 
 .clients-marquee {
-    margin-left: 260px; /* Space for header + slant */
+    /* margin-left: 260px; */
     overflow: hidden;
     padding: 40px 0;
 }

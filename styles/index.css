@@ -85,7 +85,7 @@
 .section-title {
   font-size: 48px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: black;
   margin-bottom: 30px;
   position: relative;
   display: inline-block;

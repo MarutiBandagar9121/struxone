@@ -20,6 +20,26 @@ body {
   overflow-x: hidden;
 }
 
+/* Common strux-one styles */
+.strux-one-title {
+  display: inline-flex;
+  font-weight: inherit;
+  letter-spacing: 1px;
+}
+
+.strux-title {
+  color: var(--color-primary, #0000);
+}
+
+.x-title {
+  color: var(--color-secondary,black);
+}
+
+.one-title {
+  color: white;
+  background-color: var(--color-secondary);
+}
+
 /* Navigation */
 .navbar {
   transition: all 0.3s ease;
