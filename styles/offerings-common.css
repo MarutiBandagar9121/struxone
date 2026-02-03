@@ -1,17 +1,27 @@
+:root {
+  --color-primary: #593312;     
+  --color-secondary: #A67951;   
+  --color-accent: #0D0D0D;     
+
+  --color-bg: #F2F2F2;
+  --color-text: #0D0D0D;
+  --color-muted: #888A8C;
+}
+
 /* Talent Solutions Main Styles */
 .talent-solution {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: var(--color-primary);
 }
 
 /* Hero Section Styles */
 .talent-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    background: linear-gradient(white, var(--color-bg)), 
                 url('../assets/images/workspace-solutions-hero-section.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: white;
+    color: var(--color-bg);
     padding: 100px 0;
     position: relative;
 }
@@ -88,12 +98,12 @@
 .section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--color-primary);
     margin-bottom: 1rem;
 }
 
 .section-header p {
-    color: #7f8c8d;
+    color: var(--color-secondary);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -123,7 +133,7 @@
     left: 0;
     width: 5px;
     height: 100%;
-    background-color: #0066cc;
+    background-color: var(--color-primary);
     transition: width 0.3s ease;
 }
 
@@ -135,7 +145,7 @@
 .card-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #0066cc, #4db8ff);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -150,7 +160,7 @@
 
 .solution-card:hover .card-icon {
     transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, #4db8ff, #0066cc);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary));
 }
 
 .card-title {
@@ -171,7 +181,7 @@
 }
 
 .read-more-link {
-    color: #0066cc;
+    color: var(--color-secondary);
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
@@ -186,12 +196,12 @@
 }
 
 .read-more-link:hover {
-    color: #0052a3;
+    color: var(--color-primary);
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #2c3e50, #0066cc);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: white;
 }
 
@@ -208,7 +218,7 @@
 
 .cta-section .btn-light {
     background-color: white;
-    color: #0066cc;
+    color: var(--color-secondary);
     font-weight: 600;
     padding: 12px 30px;
     border-radius: 50px;
@@ -219,6 +229,7 @@
     background-color: #f8f9fa;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: var(--color-primary);
 }
 
 /* Responsive Styles */
