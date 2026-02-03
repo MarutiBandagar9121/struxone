@@ -46,10 +46,10 @@
 .hero-title {
   font-size: 64px;
   font-weight: 800;
-  color: var(--color-primary);
+  color: white;
   line-height: 1.1;
   margin-bottom: 30px;
-  text-shadow: 0 2px 10px var(--color-bg);
+  /* text-shadow: 0 2px 10px var(--color-bg); */
 }
 
 .hero-subtitle {

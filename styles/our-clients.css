@@ -7,7 +7,7 @@
 
 .clients-wrapper {
     position: relative;
-    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
     height: 100%;
     display: flex;
     z-index: 10;
-    background: #1a252f; /* Darker shade of the main color */
+    background: var(--color-primary); /* Darker shade of the main color */
 }
 
 .header-content {
@@ -50,7 +50,7 @@
 
 .header-slant {
     width: 60px;
-    background: #1a252f;
+    background: var(--color-primary);
     position: relative;
     clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
 }
@@ -86,7 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #8FABD4;
+    background: var(--color-secondary);
     border-radius: 10px;
     padding: 15px 25px;
     /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
