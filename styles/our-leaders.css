@@ -75,7 +75,6 @@
 /* Leader Cards */
 .leader-card {
   perspective: 1000px;
-  height: 100%;
 }
 
 .leader-card-inner {
