@@ -1,3 +1,13 @@
+:root {
+  --color-primary: #593312;     
+  --color-secondary: #A67951;   
+  --color-accent: #0D0D0D;     
+
+  --color-bg: #F2F2F2;
+  --color-text: #0D0D0D;
+  --color-muted: #888A8C;
+}
+
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
@@ -18,7 +28,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.5 = 50% dark) */
+  /* background-color: rgba(0, 0, 0, 0.3); */
   z-index: 1;
 }
 
@@ -36,10 +46,10 @@
 .hero-title {
   font-size: 64px;
   font-weight: 800;
-  color: white;
+  color: var(--color-primary);
   line-height: 1.1;
   margin-bottom: 30px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 10px var(--color-bg);
 }
 
 .hero-subtitle {
@@ -75,7 +85,7 @@
 .section-title {
   font-size: 48px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-primary);
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -88,7 +98,7 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #0891b2 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   border-radius: 2px;
 }
 
@@ -195,7 +205,7 @@
 }
 
 .read-more {
-  color: #0891b2;
+  color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
@@ -286,12 +296,12 @@
 .about-title {
   font-size: 26px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-primary);
   margin-bottom: 20px;
 }
 
 .about-text {
-  color: #64748b;
+  color: var(--color-text);
   line-height: 1.7;
 }
 
@@ -320,7 +330,7 @@
 .contact-icon {
   width: 45px;
   height: 45px;
-  background: linear-gradient(135deg, #0891b2 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -343,7 +353,7 @@
 }
 
 .btn-whatsapp:hover {
-  background: #20ba5a;
+  color: var(--color-primary);
   transform: translateY(-2px);
 }
 
@@ -358,6 +368,7 @@
   }
 
   .section-title {
+    color: var(--color-primary);
     font-size: 32px;
   }
 
@@ -419,7 +430,6 @@
 }
 
 .what-we-do-section .section-title {
-  color: #2c3e50;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -434,12 +444,12 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: #3498db;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   border-radius: 2px;
 }
 
 .what-we-do-text {
-  color: #5a6c7d;
+  color: var(--color-text);
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
@@ -459,14 +469,14 @@
 
 .stat-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  border-color: rgba(52, 152, 219, 0.3);
+  box-shadow: 0 10px 30px var(--color-muted);
+  border-color: var(--color-primary)
 }
 
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
-  color: #2c3e50;
+  color: var(--color-primary);
   line-height: 1;
   margin-bottom: 0.5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -475,7 +485,7 @@
 .stat-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #3498db;
+  color: var(--color-secondary);
   margin-bottom: 0.75rem;
 }
 

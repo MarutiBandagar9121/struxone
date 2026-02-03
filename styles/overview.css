@@ -1,15 +1,11 @@
-/* General Styles */
 :root {
-  --primary-color: #0056b3;
-  --secondary-color: #00a8e8;
-  --accent-color: #ff6b35;
-  --light-color: #f8f9fa;
-  --dark-color: #343a40;
-  --gray-color: #6c757d;
-  --light-gray: #e9ecef;
-  --border-radius: 8px;
-  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
+  --color-primary: #593312;     
+  --color-secondary: #A67951;   
+  --color-accent: #0D0D0D;     
+
+  --color-bg: #F2F2F2;
+  --color-text: #0D0D0D;
+  --color-muted: #888A8C;
 }
 
 * {
@@ -21,7 +17,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: var(--dark-color);
+  color: var(--color-text);
   background-color: #fff;
 }
 
@@ -98,7 +94,7 @@ section {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--primary-color);
+  color: var(--color-primary);
   text-align: center;
   position: relative;
 }
@@ -108,7 +104,7 @@ section {
   position: absolute;
   width: 80px;
   height: 4px;
-  background-color: var(--accent-color);
+  background-color: var(--color-bg);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -118,7 +114,7 @@ section {
 .section-subtitle {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--gray-color);
+  color: var(--color-text);
   max-width: 700px;
   margin: 0 auto 3rem;
 }
@@ -145,7 +141,7 @@ section {
 .text-content .lead-text {
   font-size: 1.3rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--color-secondary);
 }
 
 .image-content {
@@ -199,7 +195,7 @@ section {
 .trust-content h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: var(--dark-color);
+  color: var(--color-secondary);
 }
 
 .trust-content p {
@@ -301,27 +297,27 @@ section {
 }
 
 .client-logo.tech {
-  background-color: #3a86ff;
+  background-color: var(--color-primary);
 }
 
 .client-logo.finance {
-  background-color: #2ecc71;
+  background-color: var(--color-primary);
 }
 
 .client-logo.healthcare {
-  background-color: #e74c3c;
+  background-color: var(--color-primary);
 }
 
 .client-logo.retail {
-  background-color: #f39c12;
+  background-color: var(--color-primary);
 }
 
 .client-logo.manufacturing {
-  background-color: #3498db;
+  background-color: var(--color-primary);
 }
 
 .client-logo.telecom {
-  background-color: #9b59b6;
+  background-color: var(--color-primary);
 }
 
 .client-card h3 {
@@ -393,7 +389,7 @@ section {
 
 .achievement-card h3 {
   margin-bottom: 0.8rem;
-  color: var(--dark-color);
+  color: var(--color-secondary);
 }
 
 .achievement-card p {
@@ -403,7 +399,7 @@ section {
 
 /* Footer Styles (Temporary for demo) */
 .site-footer {
-  background-color: var(--dark-color);
+  background-color: var(--color-secondary);
   color: white;
   padding-top: 3rem;
 }
